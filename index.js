@@ -1,4 +1,4 @@
-function vanillaWeather(response) {
+function refreshWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#city");
@@ -42,7 +42,7 @@ function formatDate(date) {
 function searchCity(city) {
   let apiKey = "3o16aeed0ctf6ab1424c14c746b74bea";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiUrl).then(vanillaWeather);
+  axios.get(apiUrl).then(refreshWeather);
 }
 
 function searchSubmit(event) {
